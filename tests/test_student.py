@@ -43,8 +43,31 @@ def test_get_student_with_more_classes():
         "sophomore",
         ["mathematics", "foundations of computing"]
     )
-
+  #Act
+    result = get_student_with_more_classes(charles,ada)
     # TODO: write assertions
+# Assertions
+    assert result == ada
+def test_get_student_with_more_classes_student_a():
+    ada = create_student("Charles Babbage", "senior", ["mechanical engineering"])
+    charles = create_student(
+        "Ada Lovelace",
+        "sophomore",
+        ["mathematics", "foundations of computing"]
+    )
+  #Act
+    result = get_student_with_more_classes(charles,ada)
+    # TODO: write assertions
+# Assertions
+    assert result == charles
+def test_init_student_with_empty_course():
+    name = "Ada Lovelace"
+    level = "sophomore"
+    
 
+    ada = create_student(name, level,None)
 
+    assert ada["name"] == name
+    assert ada["level"] == level
+    assert ada["courses"] == []
 # TODO: Write additional tests to reach 100% test coverage
